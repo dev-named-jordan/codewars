@@ -126,4 +126,6 @@ Station.jpg
 
 where LAT_N is the northern latitude and LONG_W is the western longitude.
 
+      Select city from station where SUBSTRING(city,1,1) in ('A','E','I','O','U') and SUBSTRING(city,1,1) in ('a','e','i','o','u')
+
       
