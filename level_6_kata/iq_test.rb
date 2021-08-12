@@ -28,24 +28,24 @@
 # 1: bar
 # 2: baz
 
-def iq_test(numbers)
-  cleaned = numbers.split(" ")
-  iq_hash = cleaned.each.with_index(1).to_h
-  odd = []
-  even = []
-  iq_hash.each do |number, index|
-    if number.to_i.odd?
-      odd << number
-    else
-      even << number
-    end
-  end
-  if odd.one?
-    iq_hash[odd.first]
-  elsif even.one?
-    iq_hash[even.first]
-  end
-end
+# def iq_test(numbers)
+#   cleaned = numbers.split(" ")
+#   iq_hash = cleaned.each.with_index(1).to_h
+#   odd = []
+#   even = []
+#   iq_hash.each do |number, index|
+#     if number.to_i.odd?
+#       odd << number
+#     else
+#       even << number
+#     end
+#   end
+#   if odd.one?
+#     iq_hash[odd.first]
+#   elsif even.one?
+#     iq_hash[even.first]
+#   end
+# end
 
 #Additional passing methods from codewars.
 
@@ -68,8 +68,8 @@ end
 #   (i = numbers.split.map(&:to_i)).index(i.partition(&:odd?).find(&:one?).first)+1
 # end
 
-p iq_test("2 4 7 8 10")#3
-p iq_test("1 2 2")# 1
-p iq_test("1 7 9 4 5 3")# 4
-p iq_test("1 2 3 5 7 9")# 2
-p iq_test("1 3 5 7 8 9")# 5
+# p iq_test("2 4 7 8 10")#3
+# p iq_test("1 2 2")# 1
+# p iq_test("1 7 9 4 5 3")# 4
+# p iq_test("1 2 3 5 7 9")# 2
+# p iq_test("1 3 5 7 8 9")# 5
