@@ -49,10 +49,10 @@
 
 #Additional passing methods from codewars.
 
-# def iq_test(numbers)
-#   nums = numbers.split.map(&:to_i).map(&:even?)
-#   nums.count(true) > 1 ? nums.index(false) + 1 : nums.index(true) + 1
-# end
+def iq_test(numbers)
+  nums = numbers.split.map(&:to_i).map(&:even?)
+  nums.count(true) > 1 ? nums.index(false) + 1 : nums.index(true) + 1
+end
 #
 # def iq_test(numbers)
 #   ar = numbers.split.map(&:to_i)
@@ -68,8 +68,8 @@
 #   (i = numbers.split.map(&:to_i)).index(i.partition(&:odd?).find(&:one?).first)+1
 # end
 
-# p iq_test("2 4 7 8 10")#3
-# p iq_test("1 2 2")# 1
-# p iq_test("1 7 9 4 5 3")# 4
-# p iq_test("1 2 3 5 7 9")# 2
-# p iq_test("1 3 5 7 8 9")# 5
+p iq_test("2 4 7 8 10")#3
+p iq_test("1 2 2")# 1
+p iq_test("1 7 9 4 5 3")# 4
+p iq_test("1 2 3 5 7 9")# 2
+p iq_test("1 3 5 7 8 9")# 5
