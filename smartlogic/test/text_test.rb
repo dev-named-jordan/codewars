@@ -3,7 +3,7 @@ require './lib/person'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-class MessagableTest < Minitest::Test
+class TextTest < Minitest::Test
   def setup
     @text = Text.new
     @space = File.new("./space.txt")
