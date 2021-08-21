@@ -3,4 +3,4 @@
 
 - From smartlogic root folder, in terminal run -- ruby runner.rb -- This will generate the csv file requested.
 
-- Tests can be run from the same locations with -- ruby test/text_test.rb --
+- Tests can be run from the same locations with -- ruby test/text_test.rb -- and -- test/person_test.rb --
