@@ -6,15 +6,15 @@ class LinkedList
   end
 
   def append(data)
-    require "pry"; binding.pry
-    @head = @head.push(data)
+    @head = Node.new(data)
+    p @head.data
   end
 
-  def count(data)
+  def count
     @head.count
   end
 
-  def to_string(data)
+  def to_string
     data.char
   end
 end

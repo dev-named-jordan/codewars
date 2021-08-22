@@ -6,14 +6,15 @@ require "./lib/linked_list"
 class LinkedListTest < Minitest::Test
 
   def setup
-    @node = Node.new("plop")
     @list = LinkedList.new
   end
 
   def test_it_exists_and_has_attributes
     assert_nil @list.head
     assert_equal "doop", @list.append("doop")
+    assert_equal "doop", @list.head.data
     assert_nil @list.head.next_node
+    require "pry"; binding.pry
     assert_equal 1, @list.count
     assert_equal "doop", @list.to_string
   end
