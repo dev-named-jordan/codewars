@@ -13,7 +13,6 @@ class LinkedListTest < Minitest::Test
   def test_it_exists_and_has_attributes
     assert_nil @list.head
     assert_equal "doop", @list.append("doop")
-    require "pry"; binding.pry
     assert_nil @list.head.next_node
     assert_equal 1, @list.count
     assert_equal "doop", @list.to_string
