@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/node'
 
-class ReunionTest < Minitest::Test
+class NodeTest < Minitest::Test
 
   def setup
     @node = Node.new("plop")
