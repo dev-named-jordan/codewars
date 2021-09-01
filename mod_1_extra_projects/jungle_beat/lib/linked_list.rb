@@ -11,7 +11,8 @@ class LinkedList
   end
 
   def count
-    @head.count
+    require "pry"; binding.pry
+    @head.size
   end
 
   def to_string
