@@ -17,7 +17,7 @@ title_case('THE WIND IN THE WILLOWS', 'The In') # should return: 'The Wind in th
 title_case('the quick brown fox') # should return: 'The Quick Brown Fox'
 
 def title_case(title, minor_words = '')
-  
+  require "pry"; binding.pry
 end
 
 p title_case('')# '')
