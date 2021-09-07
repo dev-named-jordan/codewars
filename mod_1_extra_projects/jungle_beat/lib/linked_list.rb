@@ -6,16 +6,23 @@ class LinkedList
   end
 
   def append(data)
-    @head = Node.new(data)
+    if @head.nil?
+      @head = Node.new(data)
+    else
+      @head.next_node
+    end
     p @head.data
   end
 
   def count
-    require "pry"; binding.pry
-    @head.size
+    if @head.nil?
+      return nil
+    elsif @head
+      return 1
+    end
   end
 
   def to_string
-    data.char
+    @head.data
   end
 end
