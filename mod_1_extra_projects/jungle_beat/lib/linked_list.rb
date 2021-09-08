@@ -10,6 +10,7 @@ class LinkedList
       @head = Node.new(data)
       p @head.data
     elsif @head.next_node.nil?
+      @head = Node.new(@head)
       @head.next_node = node
     else
       @head.new_node(data, node)

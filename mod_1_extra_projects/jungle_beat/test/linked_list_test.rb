@@ -18,7 +18,8 @@ class LinkedListTest < Minitest::Test
     assert_equal "doop", @list.to_string
 # require "pry"; binding.pry
     assert_equal "deep", @list.append(@list.head.data, "deep")
-    # assert_equal "deep", @list.head.data
+    require "pry"; binding.pry
+    assert_equal "deep", @list.head.data
     # assert_equal 2, @list.count
     # assert_equal "doop deep", @list.to_string
   end
