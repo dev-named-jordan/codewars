@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/node'
-require "./lib/linked_list"
+require './lib/linked_list'
 
 class LinkedListTest < Minitest::Test
 
@@ -16,6 +16,11 @@ class LinkedListTest < Minitest::Test
     assert_nil @list.head.next_node
     assert_equal 1, @list.count
     assert_equal "doop", @list.to_string
+# require "pry"; binding.pry
+    assert_equal "deep", @list.append(@list.head.data, "deep")
+    # assert_equal "deep", @list.head.data
+    # assert_equal 2, @list.count
+    # assert_equal "doop deep", @list.to_string
   end
 end
 

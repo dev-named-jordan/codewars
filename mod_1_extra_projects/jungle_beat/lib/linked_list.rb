@@ -1,17 +1,25 @@
 class LinkedList
-  attr_reader :head
+  attr_accessor :head
 
   def initialize(head = nil)
     @head = head
   end
 
-  def append(data)
+  def append(data, node = nil)
     if @head.nil?
       @head = Node.new(data)
+      p @head.data
+    elsif @head.next_node.nil?
+      @head.next_node = node
     else
-      @head.next_node
+      @head.new_node(data, node)
+      p @head.next_node
     end
-    p @head.data
+    # if @head.next_node.nil?
+    #   p @head.data
+    # else
+    #   p @head.next_node
+    # end
   end
 
   def count

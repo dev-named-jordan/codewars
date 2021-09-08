@@ -1,16 +1,17 @@
 class Node
-  attr_reader :data, :next_node
+  attr_accessor :data, :next_node, :new_node
 
   def initialize(data, next_node = nil)
     @data = data
     @next_node = next_node
   end
 
-  def next_node
-    if @next_node.nil?
+  def new_node(info, node = nil)
+    require "pry"; binding.pry
+    if node.nil?
       return nil
     else
-      @next_node == Node.new(new_node)
+      @next_node = Node.new(new_node)
     end
   end
 end
