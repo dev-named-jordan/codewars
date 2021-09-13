@@ -16,7 +16,6 @@ class LinkedListTest < Minitest::Test
     assert_nil @list.head.next_node
     assert_equal 1, @list.count
     assert_equal "doop", @list.to_string
-# require "pry"; binding.pry
     assert_equal "deep", @list.append(@list.head.data, "deep")
     require "pry"; binding.pry
     assert_equal "deep", @list.head.data
