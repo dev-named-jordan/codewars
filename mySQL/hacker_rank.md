@@ -156,3 +156,37 @@ https://www.hackerrank.com/challenges/weather-observation-station-8/problem?h_r=
     where LAT_N is the northern latitude and LONG_W is the western longitude.
 
 SELECT DISTINCT(city) FROM station WHERE city RLIKE '^[aeiouAEIOU].*.[aeiouAEIOU]$'
+
+https://www.hackerrank.com/challenges/weather-observation-station-9/problem
+
+Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
+
+SELECT DISTINCT city 
+FROM station 
+WHERE city NOT RLIKE '^[AEIOU]';
+
+https://www.hackerrank.com/challenges/weather-observation-station-10/problem
+
+Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+
+SELECT DISTINCT city
+FROM station
+WHERE city NOT RLIKE '[AEIOU]$'
+
+https://www.hackerrank.com/challenges/weather-observation-station-11/problem
+
+Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
+
+SELECT DISTINCT city FROM station WHERE city NOT RLIKE '^[AEIOU]' OR city NOT RLIKE '[AEIOU]$'
+
+https://www.hackerrank.com/challenges/weather-observation-station-12/problem
+
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+SELECT DISTINCT city 
+FROM station
+WHERE city
+NOT RLIKE '^[AEIOU]'
+AND city
+NOT RLIKE '[aeiou]$'
+
