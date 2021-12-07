@@ -32,3 +32,4 @@ end
 
 pig_it('Pig latin is cool')#'igPay atinlay siay oolcay'
 pig_it('This is my string')#'hisTay siay ymay tringsay'
+pig_it('Hello my name is Jordan')#'hisTay siay ymay tringsay'
