@@ -1,3 +1,5 @@
+#https://leetcode.com/problems/zigzag-conversion/#
+
 def convert(s, num_rows)
     splits = []
     until splits.count == num_rows
