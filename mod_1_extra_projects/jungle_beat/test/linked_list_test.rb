@@ -20,7 +20,8 @@ class LinkedListTest < Minitest::Test
     assert_nil @node_1.next_node
 
     @node_2 = @linked_list.append("ping")
-
+    
+    assert_instance_of LinkedList::Node, @node_1.next_node
     assert_equal "plop", @node_1.data
     assert_equal "ping", @node_2.data
     assert_instance_of LinkedList::Node, @linked_list.head
