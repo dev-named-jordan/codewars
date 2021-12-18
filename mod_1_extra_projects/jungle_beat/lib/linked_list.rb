@@ -17,6 +17,29 @@ class LinkedList
         end
     end
 
+    def count(counter = 0, og_head = 0)
+        if head.nil?
+            return counter
+        elsif head.next_node.nil?
+            counter += 1
+            return counter
+        else
+        counter += 1
+            if !self.head.next_node.nil?   
+                og_head = self.head
+                self.head = self.head.next_node
+                # self.count seems to work in pry?
+                #Seems like using until here, was actually reassigning the variable, 
+                #then garbage collecting the old one after
+                self.count(counter, og_head)
+            else
+                counter += 1
+                self.head = og_head
+                return counter
+            end 
+        end 
+    end
+
     private 
 
     class Node
@@ -28,3 +51,12 @@ class LinkedList
         end
     end 
 end 
+
+# ll = LinkedList.new
+# ll.append(10)
+# ll.append(20)
+# ll.append(30)
+# puts ll.head.data
+# puts ll.head.next_node.data
+# puts ll.head.next_node.next_node.data
+# puts ll.head.next_node.next_node.next_node.nil?
