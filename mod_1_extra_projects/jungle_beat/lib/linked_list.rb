@@ -6,6 +6,7 @@ class LinkedList
     end 
 
     def append(data)
+        # require "pry"; binding.pry
         if head.nil?
             self.head = Node.new(data, nil)
         else 
@@ -22,15 +23,16 @@ class LinkedList
             return counter
         elsif head.next_node.nil?
             counter += 1
+             if og_head.class != Integer
+                # require "pry"; binding.pry
+                self.head = og_head 
+            end
             return counter
         else
         counter += 1
             if !self.head.next_node.nil?   
                 og_head = self.head
                 self.head = self.head.next_node
-                # self.count seems to work in pry?
-                #Seems like using until here, was actually reassigning the variable, 
-                #then garbage collecting the old one after
                 self.count(counter, og_head)
             else
                 counter += 1

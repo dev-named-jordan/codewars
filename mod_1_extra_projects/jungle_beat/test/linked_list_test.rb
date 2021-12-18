@@ -35,7 +35,7 @@ class LinkedListTest < Minitest::Test
 
     @node_3 = @linked_list.append("doop")
 
-    assert_eqaul 3, @linked_list.count
+    assert_equal 3, @linked_list.count
     # assert_eqaul "doop", @linked_list.to_string
   end
 end
