@@ -4,6 +4,11 @@ class LinkedList
     def initialize
         self.head = nil
     end 
+    
+    def to_string(linked_list)
+        # require "pry"; binding.pry
+        linked_list.head.data
+    end 
 
     def append(data)
         # require "pry"; binding.pry
@@ -13,7 +18,7 @@ class LinkedList
             tail_node = self.head 
             until tail_node.next_node.nil?
                 tail_node = tail_node.next_node
-            end 
+            end
             tail_node.next_node = Node.new(data, nil)
         end
     end
@@ -58,6 +63,7 @@ end
 # ll.append(10)
 # ll.append(20)
 # ll.append(30)
+#  puts ll.count
 # puts ll.head.data
 # puts ll.head.next_node.data
 # puts ll.head.next_node.next_node.data

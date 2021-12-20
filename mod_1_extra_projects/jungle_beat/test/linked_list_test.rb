@@ -20,7 +20,8 @@ class LinkedListTest < Minitest::Test
     assert_instance_of LinkedList::Node, @node_1
     assert_equal "plop", @node_1.data
     assert_nil @node_1.next_node
-    # assert_eqaul "plop", @linked_list.to_string
+    # require "pry"; binding.pry
+    assert_equal "plop", @linked_list.to_string(@linked_list)
     @node_2 = @linked_list.append("ping")
     
     assert_equal 2, @linked_list.count
