@@ -62,4 +62,14 @@ class LinkedListTest < Minitest::Test
     assert_nil @node_2.next_node.next_node
     assert_nil @linked_list.head.next_node.next_node.next_node
   end
+
+  def test_it_can_insert_and_prepend
+    assert_equal "plop ping doop", @linked_list.to_string
+    assert_equal "dop", @linked_list.prepend("dop")
+    assert_equal "dop plop ping doop", @linked_list.to_string
+    assert_equal 4, @linked_list.count
+    # assert_equal "woo", @linked_list.insert(1, "woo")
+    # assert_equal "dop woo plop ping doop", @linked_list.to_string  
+    # assert_equal 5, @linked_list.count
+  end
 end
