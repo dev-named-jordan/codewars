@@ -68,8 +68,12 @@ class LinkedListTest < Minitest::Test
     assert_equal "dop", @linked_list.prepend("dop")
     assert_equal "dop plop ping doop", @linked_list.to_string
     assert_equal 4, @linked_list.count
-    # assert_equal "woo", @linked_list.insert(1, "woo")
-    # assert_equal "dop woo plop ping doop", @linked_list.to_string  
-    # assert_equal 5, @linked_list.count
+    assert_equal "dom", @linked_list.insert(0, "dom")
+    assert_equal "dom dop plop ping doop", @linked_list.to_string  
+    assert_equal "woo", @linked_list.insert(1, "woo")
+    assert_equal "dom woo dop plop ping doop", @linked_list.to_string  
+    # assert_equal 6, @linked_list.count
+    # assert_equal "poo", @linked_list.insert(4, "poo")
+    # assert_equal "dom woo dop plop poo ping doop", @linked_list.to_string  
   end
 end

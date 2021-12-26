@@ -7,23 +7,42 @@ class LinkedList
     
     def prepend(string)
         og_head = self.head
-        og_string = self.to_string
-        new_string = string
         new_node = Node.new(string, nil)
-        # require "pry"; binding.pry
         new_node.next_node = og_head
         self.head = new_node
         string
-        # if head.nil?
-        #     self.head = Node.new(data, nil)
-        # else 
-        #     tail_node = self.head 
-        #     until tail_node.next_node.nil?
-        #         tail_node = tail_node.next_node
-        #     end
-        #     tail_node.next_node = Node.new(data, nil)
-        # end
-        #first we need to add
+    end
+
+    def find(data)
+        
+    end
+
+    def insert(index, string)
+        counter = 0
+        if index == 0
+            self.prepend(string)
+        elsif self.count == index
+            self.append(string)
+        else
+            og_head = head
+            until head.next_node.nil?
+                if og_head != 0
+                    counter += 1
+                    self.head = head.next_node if counter != index
+                    if counter == index                
+                        tails = head.next_node
+                        new_tails = self.prepend(Node.new(string, tails))
+                        until og_head.next_node.nil?
+                            if og_head.next_node.next_node == tails.next_node
+                                og_head.next_node = new_tails
+                                self.head = og_head
+                                return string
+                            end
+                        end
+                    end
+                end
+            end
+        end
     end
 
     def to_string(string_collection = [])
