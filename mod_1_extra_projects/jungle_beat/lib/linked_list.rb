@@ -18,30 +18,28 @@ class LinkedList
     end
 
     def insert(index, string)
-        counter = 0
-        if index == 0
+        if self.head.nil?
+            new_node = Node.new(string, nil)
+            self.head = new_node
+        elsif index == 0
             self.prepend(string)
         elsif self.count == index
             self.append(string)
-        else
-            og_head = head
-            until head.next_node.nil?
-                if og_head != 0
-                    counter += 1
-                    self.head = head.next_node if counter != index
-                    if counter == index                
-                        tails = head.next_node
-                        new_tails = self.prepend(Node.new(string, tails))
-                        until og_head.next_node.nil?
-                            if og_head.next_node.next_node == tails.next_node
-                                og_head.next_node = new_tails
-                                self.head = og_head
-                                return string
-                            end
-                        end
-                    end
-                end
+        elsif index > 0
+            ind = index - 1
+            current = head
+            before_current = head
+            ind.times do
+                before_current = before_current.next_node
             end
+            index.times do
+                current = current.next_node
+            end
+            new_node = Node.new(string, nil)
+            after_current = before_current.next_node
+            before_current.next_node = new_node
+            new_node.next_node = after_current
+            string
         end
     end
 
@@ -103,5 +101,8 @@ end
 # ll.append(10)
 # ll.append(20)
 # ll.append(30)
-#  puts ll.count
-#  puts ll.to_string
+# puts ll.count
+# puts ll.to_string
+# ll.insert(2, 50)
+# puts ll.count
+# puts ll.to_string
