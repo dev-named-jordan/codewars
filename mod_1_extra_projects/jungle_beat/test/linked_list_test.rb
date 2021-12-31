@@ -30,7 +30,7 @@ class LinkedListTest < Minitest::Test
     assert_equal "plop", @linked_list.head.data
   end
   
-  def test_it_can_append_nodes
+  def test_it_has_appened_nodes_in_setup
     assert_instance_of LinkedList::Node, @linked_list.head
     assert_equal LinkedList::Node, @linked_list.head.next_node.class
     assert_instance_of LinkedList::Node, @node_1
@@ -63,7 +63,7 @@ class LinkedListTest < Minitest::Test
     assert_nil @linked_list.head.next_node.next_node.next_node
   end
 
-  def test_it_can_insert_and_prepend
+  def test_it_can_insert_count_to_string_and_prepend
     assert_equal "plop ping doop", @linked_list.to_string
     assert_equal "dop", @linked_list.prepend("dop")
     assert_equal "dop plop ping doop", @linked_list.to_string
@@ -75,5 +75,24 @@ class LinkedListTest < Minitest::Test
     assert_equal 6, @linked_list.count
     assert_equal "poo", @linked_list.insert(4, "poo")
     assert_equal "dom woo dop plop poo ping doop", @linked_list.to_string  
+  end
+
+  def test_it_can_find_pop_includes
+    assert_equal "plop ping doop", @linked_list.to_string
+    assert_equal "dop", @linked_list.prepend("dop")
+    assert_equal "dom", @linked_list.insert(0, "dom")
+    assert_equal "woo", @linked_list.insert(1, "woo")
+    assert_equal "poo", @linked_list.insert(4, "poo")
+    assert_equal "dom woo dop plop poo ping doop", @linked_list.to_string  
+    assert_nil @linked_list.find(2, 0)
+    assert_equal "dop", @linked_list.find(2, 1)
+    assert_equal "woo dop plop", @linked_list.find(1, 3)
+    assert_true @linked_list.includes?("dom")
+    assert_false @linked_list.includes?("dep")
+    assert_equal "doop", @linked_list.pop
+    assert_equal "dom woo dop plop poo ping", @linked_list.to_string  
+    assert_equal "shu", @linked_list.pop
+    assert_equal  "ping", @linked_list.to_string
+    assert_equal "dom woo dop plop poo", @linked_list.to_string  
   end
 end

@@ -13,8 +13,24 @@ class LinkedList
         string
     end
 
-    def find(data)
-        
+    def find(index, distance)
+        collection = []
+        ind = index - 1
+        current = head
+        index.times do
+            current = current.next_node
+        end
+        if distance == 0
+            return nil
+        elsif distance == 1
+            current.data
+        else
+            distance.times do
+                collection.push(current.data)
+                current = current.next_node
+            end
+            collection.join(" ")
+        end
     end
 
     def insert(index, string)
