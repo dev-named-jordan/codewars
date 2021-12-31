@@ -87,8 +87,9 @@ class LinkedListTest < Minitest::Test
     assert_nil @linked_list.find(2, 0)
     assert_equal "dop", @linked_list.find(2, 1)
     assert_equal "woo dop plop", @linked_list.find(1, 3)
-    assert_true @linked_list.includes?("dom")
-    assert_false @linked_list.includes?("dep")
+    assert_equal true, @linked_list.includes?("dom")
+    assert_equal false, @linked_list.includes?("dep")
+    assert_equal true, @linked_list.includes?("poo")
     assert_equal "doop", @linked_list.pop
     assert_equal "dom woo dop plop poo ping", @linked_list.to_string  
     assert_equal "shu", @linked_list.pop

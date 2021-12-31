@@ -4,6 +4,25 @@ class LinkedList
     def initialize
         self.head = nil
     end 
+
+    def includes?(string)
+        og_head = head
+        until head.data == string
+            self.head = head.next_node
+            if head.nil?
+                require "pry"; binding.pry
+                self.head = og_head
+                return false
+            elsif head.data == string
+                self.head = og_head
+                return true
+            end
+        end
+        if head.data == string
+            self.head = og_head
+            return true
+        end 
+    end
     
     def prepend(string)
         og_head = self.head
