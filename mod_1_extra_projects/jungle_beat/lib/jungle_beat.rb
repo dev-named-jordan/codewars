@@ -17,4 +17,9 @@ class JungleBeat
   def count
     @list.count
   end
+
+  def play
+    # require "pry"; binding.pry
+    `say -r 200 -v Fiona "#{@list.to_string}"`
+  end
 end 

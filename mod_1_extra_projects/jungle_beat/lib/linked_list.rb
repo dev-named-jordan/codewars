@@ -145,13 +145,3 @@ class LinkedList
         end
     end 
 end 
-
-# ll = LinkedList.new
-# ll.append(10)
-# ll.append(20)
-# ll.append(30)
-# puts ll.count
-# puts ll.to_string
-# ll.insert(2, 50)
-# puts ll.count
-# puts ll.to_string

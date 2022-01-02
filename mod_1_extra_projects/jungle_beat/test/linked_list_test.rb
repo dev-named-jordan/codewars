@@ -108,4 +108,12 @@ class LinkedListTest < Minitest::Test
     assert_equal "woo hoo shu", jb.append("woo hoo shu")    
     assert_equal 6, jb.count   
   end
+
+  def test_play
+    jb = JungleBeat.new
+    assert_equal "How can you have any pudding, if you dont eat your meat", jb.append("How can you have any pudding, if you dont eat your meat")
+    assert_equal 12, jb.count
+    assert_equal 12, jb.list.count
+    jb.play
+  end
 end
