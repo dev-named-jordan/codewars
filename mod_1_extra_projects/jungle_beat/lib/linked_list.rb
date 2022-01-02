@@ -3,14 +3,28 @@ class LinkedList
 
     def initialize
         self.head = nil
-    end 
+    end
+
+    def pop
+        return if head.nil?
+        node = head
+        previous_node = nil
+        until(node.next_node.nil?)
+            if(node.next_node.next_node.nil?)
+                string = node.next_node.data
+                node.next_node = nil
+                return string
+            end
+            previous_node = node
+            node = node.next_node
+        end
+    end
 
     def includes?(string)
         og_head = head
         until head.data == string
             self.head = head.next_node
             if head.nil?
-                require "pry"; binding.pry
                 self.head = og_head
                 return false
             elsif head.data == string

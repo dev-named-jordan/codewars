@@ -77,7 +77,7 @@ class LinkedListTest < Minitest::Test
     assert_equal "dom woo dop plop poo ping doop", @linked_list.to_string  
   end
 
-  def test_it_can_find_pop_includes
+  def test_it_can_find_node_pop_includes
     assert_equal "plop ping doop", @linked_list.to_string
     assert_equal "dop", @linked_list.prepend("dop")
     assert_equal "dom", @linked_list.insert(0, "dom")
@@ -92,8 +92,7 @@ class LinkedListTest < Minitest::Test
     assert_equal true, @linked_list.includes?("poo")
     assert_equal "doop", @linked_list.pop
     assert_equal "dom woo dop plop poo ping", @linked_list.to_string  
-    assert_equal "shu", @linked_list.pop
-    assert_equal  "ping", @linked_list.to_string
+    assert_equal "ping", @linked_list.pop
     assert_equal "dom woo dop plop poo", @linked_list.to_string  
   end
 end
