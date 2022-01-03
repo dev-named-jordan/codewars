@@ -141,7 +141,10 @@ https://www.hackerrank.com/challenges/weather-observation-station-7/problem?h_r=
 
     where LAT_N is the northern latitude and LONG_W is the western longitude.
 
-SELECT DISTINCT(city) from station where SUBSTRING(city,-1,1) in ('A','E','I','O','U') and SUBSTRING(city,-1,1) in ('a','e','i','o','u')
+SELECT DISTINCT(city) 
+FROM station 
+WHERE SUBSTRING(city,-1,1) in ('A','E','I','O','U') and 
+SUBSTRING(city,-1,1) in ('a','e','i','o','u')
 
 https://www.hackerrank.com/challenges/weather-observation-station-8/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
@@ -200,3 +203,13 @@ SELECT name
 FROM students 
 WHERE marks > 75 
 ORDER BY RIGHT(Name, 3), ID
+
+https://www.hackerrank.com/challenges/name-of-employees/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+Write a query that prints a list of employee names (i.e.: the name attribute) from the Employee table in alphabetical order.
+
+where employee_id is an employee's ID number, name is their name, months is the total number of months they've been working for the company, and salary is their monthly salary.
+
+SELECT name 
+FROM employee 
+ORDER BY name
